@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Listwy przypodłogowe, ścienne, panele 3D i lamele | Dynamic Decor</title>
+<meta name="description" content="Propozycja nowej strony dynamicdecor.pl: katalog listew, paneli i lamel z wyszukiwaniem własnymi słowami, filtrami po wymiarach, przekrojem profilu, kalkulatorem na pełne listwy i zamówieniem próbki.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/archivo-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" media="(max-width:760px)" imagesrcset="img/hero-m-480.webp 480w, img/hero-m-720.webp 720w, img/hero-m-1080.webp 1080w, img/hero-m-1440.webp 1440w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" media="(min-width:761px)" imagesrcset="img/hero-d-960.webp 960w, img/hero-d-1600.webp 1600w, img/hero-d-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
+<style>
+@font-face{font-family:Archivo;font-weight:400 800;font-stretch:100% 125%;font-display:swap;src:url(fonts/archivo-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B2,U+00B7,U+00BB,U+00D3,U+00D7,U+00F3,U+2013-2014,U+2018-2019,U+201C-201E,U+2022,U+2026,U+20AC,U+2192}
+@font-face{font-family:Archivo;font-weight:400 800;font-stretch:100% 125%;font-display:swap;src:url(fonts/archivo-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+:root{--gold:#CEA24F;--gold-h:#DDB462;--gold-d:#7E5F18;--ink:#141517;--ink2:#2A2C30;--mute:#585D64;--line:#DCDFE2;--bg2:#F2F3F4;--dark:#17181B;--w:1320px;--g:clamp(16px,4vw,48px);--hh:68px;--cut:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.6 Archivo,system-ui,sans-serif;font-stretch:100%;overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+a{color:var(--gold-d)}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-weight:700;font-stretch:118%;line-height:1.1;margin:0;letter-spacing:-.015em}
+h2{font-size:clamp(28px,3.3vw,46px)}
+h3{font-size:20px;font-stretch:110%}
+p{margin:0}
+.wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 var(--g)}
+@media(min-width:1800px){:root{--w:1640px}}
+@media(min-width:2300px){:root{--w:1960px;--hh:84px}html{font-size:17px}body{font-size:18px}.nav a{font-size:18px;padding:0 18px}.logo,.logo img{width:190px!important;height:43px!important}.hd .btn{font-size:17px;min-height:52px}.hero h1{font-size:92px!important}.hero .lead{font-size:23px}.ask{max-width:980px}.ask input{font-size:20px}.ask .btn{min-height:62px;font-size:18px}.chip{font-size:16px}h2{font-size:56px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* przycisk ze scietym rogiem jak frez listwy */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border:0;background:var(--gold);color:var(--ink);font-weight:700;font-stretch:110%;text-decoration:none;cursor:pointer;clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%);transition:background .15s,transform .15s;white-space:nowrap}
+.btn:hover{background:var(--gold-h)}
+.btn:active{transform:translateY(1px)}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.dark:hover{background:#000}
+.btn.line{background:var(--ink);color:var(--ink);position:relative;isolation:isolate}
+.btn.line::before{content:"";position:absolute;inset:1.5px;background:#fff;z-index:-1;clip-path:polygon(0 0,calc(100% - var(--cut) + .6px) 0,100% calc(var(--cut) - .6px),100% 100%,0 100%)}
+.btn.line:hover::before{background:var(--bg2)}
+.btn.sm{min-height:42px;padding:0 18px;font-size:15px;--cut:10px}
+/* naglowek */
+.hd{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);height:var(--hh)}
+.hd .wrap{height:100%;display:flex;align-items:center;gap:24px}
+.logo{display:block;flex:none;width:150px;line-height:0}
+.logo img{width:150px;height:34px}
+.nav{display:flex;gap:2px;margin-left:auto;align-items:stretch;height:100%}
+.nav a{position:relative;display:flex;align-items:center;padding:0 13px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
+.nav a:hover{color:var(--gold-d)}
+.nav a[aria-current=page]::after{content:"";position:absolute;left:13px;right:13px;bottom:-1px;height:3px;background:var(--gold)}
+.hd .btn{min-height:44px;padding:0 18px;font-size:15px;--cut:10px}
+.cnt{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:var(--ink);color:#fff;font-size:12.5px;font-weight:700}
+.cnt[hidden]{display:none}
+.ico{width:46px;height:46px;display:inline-grid;place-items:center;border:0;background:none;cursor:pointer;color:var(--ink);position:relative}
+.ico:hover{background:var(--bg2)}
+.ico .cnt{position:absolute;top:2px;right:0;min-width:18px;height:18px;font-size:11px;padding:0 4px}
+.burger,.tools .smp{display:none}
+.smp{align-items:center;gap:6px;height:40px;padding:0 10px;margin-right:4px;font-weight:700;font-size:14.5px;color:var(--ink);text-decoration:none;border:1.5px solid var(--ink)}
+@media(max-width:1240px){.nav a.nopt{display:none}}
+@media(max-width:980px){.nav,.hd .btn{display:none}.burger{display:inline-grid}.tools .smp{display:inline-flex}.tools{align-items:center}.hd .wrap{gap:4px}.tools{margin-left:auto;display:flex}:root{--hh:62px}.logo,.logo img{width:128px}.logo img{height:29px}}
+.mnav{position:fixed;inset:var(--hh) 0 0 0;z-index:49;background:#fff;padding:12px var(--g) 32px;display:flex;flex-direction:column;overflow:auto}
+.mnav[hidden]{display:none}
+.mnav a{padding:15px 0;border-bottom:1px solid var(--line);font-weight:700;font-stretch:115%;font-size:21px;line-height:1.2;color:var(--ink);text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.mnav a small{font-weight:500;font-stretch:100%;font-size:14px;color:var(--mute)}
+.mnav a[aria-current=page]{box-shadow:inset 4px 0 0 var(--gold);padding-left:14px}
+.mnav .btn{margin-top:24px;justify-content:center;font-size:17px}
+.mnav p{margin-top:20px;color:var(--mute);font-size:15px}
+/* pierwszy ekran */
+.hero{position:relative;min-height:calc(100svh - var(--hh));display:flex;flex-direction:column;justify-content:center;color:#fff;isolation:isolate;overflow:hidden;background:#3d5068}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero picture img{object-position:62% 40%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,14,18,.78) 0,rgba(12,14,18,.55) 38%,rgba(12,14,18,.08) 68%,rgba(12,14,18,0) 100%)}
+.hero .wrap{padding-top:clamp(40px,8vh,96px);padding-bottom:clamp(40px,8vh,96px)}
+.hero h1{font-size:clamp(34px,4.1vw,70px);max-width:15ch;text-wrap:balance;font-stretch:120%}
+.hero .lead{margin-top:18px;font-size:clamp(16px,1.3vw,20px);max-width:48ch;color:#EDEFF2}
+.ask{margin-top:30px;max-width:780px;display:flex;background:#fff;padding:6px;box-shadow:0 14px 50px rgba(0,0,0,.3);clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%)}
+.ask input{flex:1;min-width:0;border:0;outline:0;padding:0 16px;font-size:17px;color:var(--ink);background:none}
+.ask input::placeholder{color:#6A7078}
+.ask .btn{min-height:54px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;max-width:820px}
+.chip{border:1px solid rgba(255,255,255,.5);background:rgba(14,16,20,.38);color:#fff;padding:8px 13px;font-size:14px;font-weight:600;cursor:pointer;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.chip:hover{background:rgba(14,16,20,.65);border-color:var(--gold)}
+.hero .tel{margin-top:22px;font-size:15px;color:#DDE1E6}
+.hero .tel a{color:#fff;font-weight:700;text-decoration:none;border-bottom:1px solid var(--gold)}
+@media(max-width:760px){
+ .hero{justify-content:flex-end}
+ .hero picture img{object-position:50% 30%}
+ .hero::after{background:linear-gradient(180deg,rgba(12,14,18,0) 0,rgba(12,14,18,.35) 22%,rgba(12,14,18,.82) 50%,rgba(12,14,18,.92) 100%)}
+ .hero .wrap{padding-top:120px;padding-bottom:22px}
+ .hero h1{font-size:clamp(28px,8.2vw,36px)}
+ .hero .lead{margin-top:12px;font-size:15.5px;line-height:1.5}
+ .ask{margin-top:24px;flex-direction:column;gap:6px}
+ .ask input{min-height:50px;font-size:16px}
+ .ask .btn{width:100%;min-height:50px}
+ .chips{flex-wrap:nowrap;overflow-x:auto;margin-right:calc(-1*var(--g));padding-right:var(--g);scrollbar-width:none}
+ .chips::-webkit-scrollbar{display:none}
+ .chip{flex:none}
+ .hero .tel{display:none}
+ body.top .adv,body.fo .adv{opacity:0;pointer-events:none}
+}
+@media(max-width:760px) and (max-height:700px){.hero .wrap{padding-top:70px;padding-bottom:18px}.hero h1{font-size:26px}.hero .lead{font-size:14.5px;margin-top:10px}.ask{margin-top:24px}.ask input,.ask .btn{min-height:46px}}
+@media(min-width:761px) and (max-height:860px){.hero h1{font-size:clamp(34px,3.6vw,56px)}.hero .wrap{padding-top:28px;padding-bottom:28px}.ask{margin-top:24px}.hero .tel{margin-top:14px}}
+/* sekcje */
+.sec{padding:clamp(56px,7.5vw,112px) 0}
+.sec.g{background:var(--bg2)}
+.shead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px}
+.shead p{color:var(--mute);max-width:58ch;margin-top:12px}
+.more{font-weight:700;white-space:nowrap;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--gold);padding-bottom:2px}
+.more:hover{color:var(--gold-d)}
+@media(max-width:700px){.shead{flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:24px}}
+/* profil jako separator: linia sciany z przekrojem listwy */
+.prof{display:block;height:46px;margin:0 0 40px;background:linear-gradient(var(--line),var(--line)) 0 100%/100% 1px no-repeat}
+.prof svg{height:46px;width:auto;color:var(--gold);display:block}
+/* wejscia po zastosowaniu */
+.zast{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.zast a{display:flex;flex-direction:column;gap:12px;padding:22px 20px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);position:relative;transition:background .15s}
+.zast a:hover{background:var(--bg2)}
+.zast a:hover svg{--pff:rgba(206,162,79,.2)}
+.zast svg{width:100%;max-width:150px;height:auto;aspect-ratio:4/3}
+.zast b{font-weight:700;font-stretch:115%;font-size:18px;line-height:1.15}
+.zast span{color:var(--mute);font-size:14px;line-height:1.4}
+.zast a::after{content:"";position:absolute;right:16px;top:18px;width:9px;height:9px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);transform:rotate(45deg);opacity:0;transition:opacity .15s,right .15s}
+.zast a:hover::after{opacity:1;right:12px}
+@media(max-width:1100px){.zast{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:820px){.zast{grid-template-columns:repeat(2,1fr)}.zast a{padding:16px 14px}.zast b{font-size:16px}.zast svg{max-width:120px}}
+svg .pf{fill:none;stroke:var(--gold);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round;transition:fill .15s}
+svg .bs{fill:none;stroke:#9AA0A7;stroke-width:1.3}
+svg .ds{fill:none;stroke:var(--ink);stroke-width:1}
+svg .dt{font:600 11px Archivo,sans-serif;fill:var(--ink)}
+/* pasy przewijane */
+.row{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*20px)/4);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px;cursor:grab}
+.row::-webkit-scrollbar{display:none}
+.row>*{scroll-snap-align:start}
+.row.drag{cursor:grabbing;scroll-snap-type:none}
+.row.drag a,.row.drag button{pointer-events:none}
+@media(min-width:1800px){.row{grid-auto-columns:calc((100% - 4*20px)/5)}}
+@media(max-width:1100px){.row{grid-auto-columns:calc((100% - 2*16px)/3);gap:16px}}
+@media(max-width:700px){.row{grid-auto-columns:78%;gap:12px}}
+.arrows{display:flex;gap:8px}
+.arrows button{width:48px;height:48px;border:1.5px solid var(--ink);background:#fff;cursor:pointer;display:grid;place-items:center}
+.arrows button:hover{background:var(--ink);color:#fff}
+.arrows button:disabled{opacity:.3;cursor:default;background:#fff;color:var(--ink)}
+@media(max-width:700px){.arrows{display:none}}
+/* karta produktu w siatce */
+.pc{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:#fff;position:relative}
+.pc .ph{aspect-ratio:4/3;overflow:hidden;background:var(--bg2);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%)}
+.pc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pc:hover .ph img{transform:scale(1.04)}
+.pc .t{padding:14px 2px 6px;display:flex;flex-direction:column;gap:4px;flex:1}
+.pc .k{font-size:13px;font-weight:700;color:var(--gold-d)}
+.pc h3{font-size:18.5px;line-height:1.2}
+.pc .spec{font-size:13.5px;color:var(--mute);margin-top:auto;padding-top:10px;display:flex;align-items:center;gap:10px;border-top:1px solid var(--line)}
+.pc .spec svg{width:42px;flex:none}
+.pc .why{font-size:13.5px;color:var(--ink);background:var(--bg2);padding:8px 10px;margin-top:6px;box-shadow:inset 3px 0 0 var(--gold)}
+.g .pc{background:transparent}
+/* pas kalkulatora (mocna sekcja w kolorze logo) */
+.band{background:var(--gold);color:var(--ink)}
+.band .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.band h2{font-size:clamp(30px,3.4vw,48px)}
+.band p{margin-top:16px;font-size:18px;max-width:46ch}
+.band .btn{margin-top:28px}
+.mcalc{background:#fff;padding:clamp(20px,3vw,36px);box-shadow:0 24px 60px rgba(70,50,0,.22);clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%)}
+.mcalc h3{font-size:21px}
+.mcalc .room{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px}
+@media(max-width:860px){.band .wrap{grid-template-columns:1fr}}
+/* inspiracje */
+.ins{display:block;color:var(--ink);text-decoration:none;position:relative}
+.ins button{display:block;width:100%;padding:0;border:0;background:var(--bg2);cursor:zoom-in;aspect-ratio:3/4;overflow:hidden}
+.ins img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.ins button:hover img{transform:scale(1.03)}
+.ins p{margin-top:10px;font-size:14.5px;color:var(--mute)}
+.ins p a{color:var(--ink);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--gold)}
+/* wspolpraca (ciemna sekcja) */
+.dk{background:var(--dark);color:#C9CDD2}
+.dk h2,.dk h3{color:#fff}
+.dk .shead p{color:#AEB3B9}
+.dk .more{color:#fff}
+.co{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #34373C}
+.co>div{padding:30px 30px 8px 0}
+.co>div+div{padding-left:30px;border-left:1px solid #34373C}
+.co h3{font-size:24px}
+.co p{margin-top:10px}
+.co ul{margin:16px 0 0;padding:0;list-style:none}
+.co li{padding:8px 0 8px 26px;position:relative;font-size:15.5px}
+.co li::before{content:"";position:absolute;left:0;top:17px;width:14px;height:7px;border:2px solid var(--gold);border-right:0;border-bottom-left-radius:6px}
+.sample{margin-top:44px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 32px;background:#222428;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)}
+.sample h3{font-size:24px}
+.sample p{margin-top:6px;color:#AEB3B9}
+@media(max-width:860px){.co{grid-template-columns:1fr}.co>div,.co>div+div{padding:24px 0 8px;border-left:0}.co>div+div{border-top:1px solid #34373C}.sample{flex-direction:column;align-items:flex-start;padding:24px 20px}}
+.dk .co.lt{border-color:var(--line)}
+/* SEO */
+.seo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px)}
+.seo h2{font-size:clamp(26px,2.6vw,36px)}
+.seo h3{margin-top:28px;font-size:20px}
+.seo p{margin-top:12px;color:#383B40}
+@media(max-width:860px){.seo{grid-template-columns:1fr}}
+/* blog */
+.bl{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.bl a{display:block;text-decoration:none;color:var(--ink)}
+.bl .ph{aspect-ratio:16/10;overflow:hidden;background:#E3E5E8}
+.bl img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.bl a:hover img{transform:scale(1.03)}
+.bl .t{padding:16px 0 4px}
+.bl .c{font-size:13px;font-weight:700;color:var(--gold-d)}
+.bl h3{font-size:20px;margin-top:4px;line-height:1.22}
+.bl p{color:var(--mute);font-size:15px;margin-top:8px}
+@media(max-width:1000px){.bl{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.bl{grid-template-columns:1fr;gap:16px}.bl a{display:grid;grid-template-columns:112px 1fr;gap:14px}.bl .ph{aspect-ratio:1}.bl .t{padding:0}.bl h3{font-size:16.5px}.bl p{display:none}}
+/* stopka */
+.ft{background:#0F1012;color:#BFC4CA;padding:60px 0 28px;font-size:15px}
+.ft .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.ft h4{font-weight:700;font-stretch:112%;font-size:16px;color:#fff;margin:0 0 12px}
+.ft a{color:#BFC4CA;text-decoration:none}
+.ft a:hover{color:#fff}
+.ft ul{list-style:none;margin:0;padding:0}
+.ft li{padding:4px 0}
+.ft .logo,.ft .logo img{width:170px;height:39px}
+.ft .addr{margin-top:18px;line-height:1.7}
+.ft .bot{margin-top:44px;padding-top:20px;border-top:1px solid #2C2F33;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px}
+@media(max-width:860px){.ft .cols{grid-template-columns:1fr 1fr;gap:28px 20px}.ft .cols>div:first-child{grid-column:1/-1}}
+
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+
+
+/* widoki */
+[data-view]{display:none}
+[data-view].on{display:block}
+.crumb{font-size:14px;color:var(--mute);padding:20px 0 0}
+.crumb a{color:var(--mute);text-decoration:none}
+.crumb a:hover{color:var(--gold-d)}
+.crumb span{margin:0 7px;color:#A6ACB2}
+.note{font-size:13.5px;color:var(--mute)}
+.pagehead{padding:12px 0 26px}
+.pagehead h1{font-size:clamp(30px,3.6vw,50px)}
+.pagehead p{color:var(--mute);margin-top:10px;max-width:72ch}
+/* katalog */
+.kat{display:grid;grid-template-columns:300px 1fr;gap:40px;padding-bottom:88px}
+.fpanel{position:sticky;top:calc(var(--hh) + 16px);align-self:start;max-height:calc(100vh - var(--hh) - 32px);overflow:auto;padding-right:6px;scrollbar-width:thin}
+.fgr{border-top:1px solid var(--line);padding:16px 0}
+.fgr h3{font-weight:700;font-stretch:105%;font-size:15px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;letter-spacing:0}
+.fgr h3 button{border:0;background:none;cursor:pointer;color:var(--gold-d);font-weight:700;font-size:13.5px;padding:0}
+.fchips{display:flex;flex-wrap:wrap;gap:6px}
+.fc{border:1.5px solid var(--line);background:#fff;padding:7px 11px;font-size:14px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:40px;line-height:1.2}
+.fc:hover{border-color:var(--ink)}
+.fc[aria-pressed=true]{border-color:var(--ink);background:var(--ink);color:#fff}
+.fc[aria-pressed=true] small{color:#C9CDD2}
+.fc .sw{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2)}
+.fc small{color:var(--mute);font-weight:500}
+.fvis{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.fvis .fc{flex-direction:column;align-items:flex-start;padding:10px 10px 9px;gap:6px;font-size:13.5px;text-align:left}
+.fvis svg{width:64px;height:48px}
+.fvis .fc[aria-pressed=true] svg{--bsc:#7A8087;--pff:rgba(206,162,79,.25)}
+.ktop{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.ktop b{font-size:15px}
+.ktop select{border:1.5px solid var(--line);padding:8px 10px;background:#fff;min-height:44px;max-width:100%;min-width:0}
+.kat>div{min-width:0}
+.ktop>div{display:flex;gap:8px;min-width:0}
+.kask{display:flex;gap:8px;margin-bottom:12px;border:1.5px solid var(--ink);padding:5px}
+.kask input{flex:1;min-width:0;border:0;outline:0;padding:0 12px;font-size:16px}
+.kask .btn{min-height:46px}
+.understood{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:18px;font-size:14px;color:var(--mute)}
+.understood[hidden]{display:none}
+.understood .tag{background:var(--ink);color:#fff;padding:4px 10px;font-weight:700}
+.understood button{border:0;background:none;color:var(--gold-d);font-weight:700;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 20px}
+@media(min-width:1800px){.grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:2300px){.grid{grid-template-columns:repeat(5,1fr)}}
+.fbtn{display:none}
+.empty{padding:40px;border:1px dashed var(--line);text-align:center;color:var(--mute)}
+@media(max-width:1100px){.kat{grid-template-columns:260px 1fr;gap:26px}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){.kat{grid-template-columns:1fr}.fpanel{position:fixed;inset:auto 0 0 0;top:auto;max-height:84vh;z-index:60;background:#fff;padding:6px var(--g) 0;box-shadow:0 -20px 60px rgba(0,0,0,.25);transform:translateY(105%);transition:transform .25s;visibility:hidden}.fpanel.open{transform:none;visibility:visible}.fbtn{display:inline-flex}.fhead{display:flex!important}.grid{grid-template-columns:repeat(2,1fr);gap:20px 12px}.pc h3{font-size:15.5px}.pc .spec{font-size:12.5px}.pc .spec svg{display:none}.pc .k{font-size:12px}}
+.fhead{display:none;justify-content:space-between;align-items:center;padding:8px 0;position:sticky;top:0;background:#fff;z-index:1}
+.fhead b{font-weight:700;font-stretch:115%;font-size:20px}
+.fapply{position:sticky;bottom:0;background:#fff;padding:12px 0 16px;display:none}
+@media(max-width:860px){.fapply{display:block}.fapply .btn{width:100%}}
+.scrim{position:fixed;inset:0;background:rgba(10,12,14,.5);z-index:55}
+.scrim[hidden]{display:none}
+/* karta produktu */
+.pv{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,64px);padding:10px 0 56px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-self:start;min-width:0}
+.gal button{padding:0;border:0;overflow:hidden;cursor:zoom-in;background:var(--bg2);aspect-ratio:1}
+.gal button:first-child{grid-column:1/-1;aspect-ratio:4/3;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,0 100%)}
+.gal img{width:100%;height:100%;object-fit:cover}
+.gal button.dr{grid-column:1/-1;aspect-ratio:auto;height:110px;background:#fff;border:1px solid var(--line)}
+.gal button.dr img{object-fit:contain;background:#fff;padding:8px}
+.gal .cap{font-size:13px;color:var(--mute);grid-column:1/-1}
+.pinfo .k{font-weight:700;color:var(--gold-d)}
+.pinfo h1{font-size:clamp(30px,3.3vw,46px);margin-top:6px}
+.pinfo .kod{color:var(--mute);margin-top:8px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);margin-top:22px;border-top:1px solid var(--line)}
+.facts div{padding:12px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column}
+.facts div:nth-child(odd){padding-right:16px}
+.facts span{font-size:13px;color:var(--mute)}
+.facts b{font-size:16.5px}
+.pact{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.pact .added{align-self:center;font-size:14px;font-weight:700;color:var(--gold-d)}
+.calc{margin-top:26px;background:var(--bg2);padding:24px;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)}
+.calc h2{font-size:24px}
+.calc .mode{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+.calc .in{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.calc label,.mcalc label{font-size:13px;color:var(--mute);display:flex;flex-direction:column;gap:4px;font-weight:600}
+.calc input,.calc select,.mcalc input,.mcalc select{border:1.5px solid #C6CBD0;padding:10px;background:#fff;min-height:48px;font-size:16px;width:100%;border-radius:0}
+.calc input:focus,.calc select:focus,.mcalc input:focus,.mcalc select:focus{outline:2px solid var(--gold);border-color:var(--ink)}
+.calc [hidden]{display:none}
+.res{margin-top:16px;padding:16px 18px;background:#fff;box-shadow:inset 4px 0 0 var(--gold)}
+.res b.big{font-weight:800;font-stretch:120%;font-size:32px;line-height:1.1;display:block}
+.res p{color:var(--mute);font-size:14.5px;margin-top:6px}
+.res .bar{display:flex;gap:3px;margin-top:12px;flex-wrap:wrap}
+.res .bar i{height:10px;flex:0 0 auto;background:var(--ink)}
+.res .bar i.cut{background:var(--gold)}
+@media(max-width:560px){.calc .in label[data-k=z]{grid-column:1/-1}.res b.big{font-size:25px}.calc .in{grid-template-columns:1fr 1fr}.calc .in label.full{grid-column:1/-1}.calc{padding:18px}.mcalc .room{grid-template-columns:1fr 1fr}.mcalc .room label:last-child{grid-column:1/-1}}
+.psec{padding:48px 0;border-top:1px solid var(--line)}
+.psec h2{font-size:clamp(24px,2.4vw,34px);margin-bottom:20px}
+.ptwo{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(24px,4vw,64px)}
+.xsec{background:#fff;border:1px solid var(--line);padding:clamp(14px,2vw,24px)}
+.xsec svg{width:100%;height:auto;max-height:340px}
+.xsec svg .pf{stroke-width:2.2;fill:rgba(206,162,79,.12)}
+.xsec svg .dt{font-size:13px}
+.xsec .note{margin-top:10px}
+.xrys{margin-top:14px;border:1px solid var(--line);padding:10px;background:#fff;cursor:zoom-in;display:block;width:100%}
+.tech{width:100%;border-collapse:collapse;font-size:15px}
+.tech th,.tech td{text-align:left;padding:11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.tech th{font-weight:500;color:var(--mute);width:46%;padding-right:12px}
+.feat{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.feat li{padding:7px 0 7px 26px;position:relative;break-inside:avoid;font-size:15.5px}
+.feat li::before{content:"";position:absolute;left:0;top:15px;width:14px;height:7px;border:2px solid var(--gold);border-right:0;border-bottom-left-radius:6px}
+@media(max-width:560px){.feat{columns:1}}
+.docs{list-style:none;margin:0;padding:0}
+.docs a{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:700}
+.docs a:hover{color:var(--gold-d)}
+.docs .ft2{flex:none;width:42px;height:50px;border:1.5px solid var(--ink);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);display:grid;place-items:end center;padding-bottom:6px;font-weight:800;font-size:10.5px;position:relative}
+.docs .ft2::after{content:"";position:absolute;right:0;top:0;width:12px;height:12px;background:linear-gradient(225deg,transparent 50%,var(--ink) 50%,var(--ink) calc(50% + 1.5px),var(--gold) calc(50% + 1.5px))}
+.docs small{display:block;font-weight:500;color:var(--mute);font-size:13px}
+.docs li.miss{padding:14px 0;border-bottom:1px solid var(--line);color:var(--mute);font-size:15px}
+.pdesc{color:#383B40;max-width:72ch}
+.pdesc p+p{margin-top:12px}
+@media(max-width:960px){.pv,.ptwo{grid-template-columns:1fr}}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(8,9,11,.93);display:grid;place-items:center;padding:20px}
+.lb[hidden]{display:none}
+.lb img{max-height:86vh;width:auto;max-width:100%;background:#fff}
+.lb .x{position:absolute;top:14px;right:14px;width:48px;height:48px;border:0;background:#fff;cursor:pointer;font-size:26px;line-height:1}
+.lb .nv{position:absolute;top:50%;width:48px;height:60px;margin-top:-30px;border:0;background:rgba(255,255,255,.9);cursor:pointer;font-size:26px}
+.lb .nv.p{left:14px}.lb .nv.n{right:14px}
+.lb .lc{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#D8DCE0;font-size:14px}
+/* doradca */
+.adv{transition:opacity .2s;position:fixed;right:16px;bottom:16px;z-index:70;display:flex;align-items:center;gap:10px;min-height:54px;padding:0 20px 0 14px;border:0;background:var(--ink);color:#fff;font-weight:700;font-stretch:110%;cursor:pointer;box-shadow:0 12px 34px rgba(0,0,0,.28);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%)}
+.adv svg{width:30px;height:24px}
+.advp{position:fixed;right:16px;bottom:82px;z-index:80;width:min(430px,calc(100vw - 32px));max-height:min(640px,calc(100svh - 110px));background:#fff;box-shadow:0 28px 80px rgba(0,0,0,.32);display:flex;flex-direction:column;overflow:hidden;border-top:4px solid var(--gold)}
+.advp[hidden]{display:none}
+.advp header{padding:12px 12px 12px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.advp header b{font-weight:700;font-stretch:115%;font-size:19px}
+.advp header small{display:block;font-size:13px;color:var(--mute);font-weight:500}
+.advp .msgs{padding:16px;overflow:auto;display:flex;flex-direction:column;gap:10px;flex:1}
+.msg{padding:10px 13px;font-size:14.5px;max-width:92%;line-height:1.5}
+.msg.me{align-self:flex-end;background:var(--ink);color:#fff}
+.msg.ai{align-self:flex-start;background:var(--bg2)}
+.msg.ai a{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--gold)}
+.msg.ai ul{margin:6px 0 0;padding-left:18px}
+.msg.ai li{margin:4px 0}
+.advq{display:flex;gap:6px;flex-wrap:wrap;padding:0 16px 10px}
+.advq button{border:1px solid var(--line);background:#fff;padding:6px 10px;font-size:13px;font-weight:600;cursor:pointer}
+.advq button:hover{border-color:var(--ink)}
+.advp form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--line)}
+.advp input{flex:1;min-width:0;border:1.5px solid var(--line);padding:0 12px;min-height:48px}
+.advp .btn{min-height:48px;padding:0 16px;--cut:10px}
+@media(max-width:560px){.adv span{display:none}.adv{padding:0 14px}.advp{right:8px;left:8px;width:auto;bottom:78px}}
+/* wspolpraca - podstrona */
+.wsp{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,72px);padding:0 0 88px}
+.aud{border-top:1px solid var(--line)}
+.aud>div{padding:26px 0;border-bottom:1px solid var(--line)}
+.aud h2{font-size:26px}
+.aud p{color:#383B40;margin-top:10px}
+.aud ul{margin:12px 0 0;padding:0;list-style:none}
+.aud li{padding:6px 0 6px 26px;position:relative}
+.aud li::before{content:"";position:absolute;left:0;top:14px;width:14px;height:7px;border:2px solid var(--gold);border-right:0;border-bottom-left-radius:6px}
+.form{background:var(--bg2);padding:26px;display:grid;gap:13px;align-self:start;position:sticky;top:calc(var(--hh) + 16px);clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,0 100%)}
+.form h2{font-size:26px}
+.form label{display:flex;flex-direction:column;gap:5px;font-size:14px;font-weight:600}
+.form input,.form select,.form textarea{border:1.5px solid #C6CBD0;padding:11px;background:#fff;font:inherit;border-radius:0;min-height:48px}
+.form .ok{background:#fff;padding:12px 14px;box-shadow:inset 4px 0 0 var(--gold)}
+.form .ok[hidden]{display:none}
+.slist{display:flex;flex-wrap:wrap;gap:6px}
+.slist span{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--ink);padding:5px 6px 5px 10px;font-size:14px;font-weight:700}
+.slist button{border:0;background:none;cursor:pointer;font-size:18px;line-height:1;padding:0 4px}
+.slist em{font-style:normal;color:var(--mute);font-size:14px}
+@media(max-width:900px){.wsp{grid-template-columns:1fr}.form{position:static}}
+/* blog - podstrona */
+.bcats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:26px}
+.art{max-width:760px;padding-bottom:40px}
+.art h1{font-size:clamp(30px,3.4vw,46px)}
+.art .meta{color:var(--mute);font-size:14px;margin-top:12px}
+.art .url{font-size:13.5px;color:var(--mute);margin-top:6px;word-break:break-all}
+.art .url b{color:var(--ink)}
+.art .cover{margin:26px 0 8px;background:var(--bg2)}
+.art .cover img{width:100%;max-height:520px;object-fit:cover}
+.art .body h2{font-size:26px;margin:34px 0 10px}
+.art .body h3{font-size:20px;margin:24px 0 8px}
+.art .body p{margin:12px 0;color:#2E3135;font-size:17px;line-height:1.7}
+.art .body ul{padding-left:22px;font-size:17px;color:#2E3135}
+.art .body li{margin:6px 0}
+.artside{border-top:1px solid var(--line);padding-top:32px;margin-top:20px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Dynamic Decor - P.H. MAM Sp. z o.o.","url":"https://dynamicdecor.pl/","logo":"https://dynamicdecor.pl/logo.png","email":"biuro@mam.com.pl","telephone":"+48 41 346 53 05","address":{"@type":"PostalAddress","streetAddress":"ul. Leśna 31, Zgórsko","postalCode":"26-052","addressLocality":"Nowiny","addressCountry":"PL"}}</script>
+</head>
+<body class="top">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<!-- przekroje profili: kreska sciany/podlogi szara, profil zloty jak na rysunkach technicznych producenta -->
+<symbol id="g-przyp" viewBox="0 0 120 90"><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M40 6V82M40 82H116"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M40 82V14H47C53 14 56 18 56 24V30C56 33 53 34 53 38V75C53 79 55 82 59 82Z"/></symbol>
+<symbol id="g-scienna" viewBox="0 0 120 90"><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M40 4V86"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M40 22H44C50 22 51 28 55 31C62 35 64 40 64 45C64 50 62 55 55 59C51 62 50 68 44 68H40Z"/></symbol>
+<symbol id="g-karnisz" viewBox="0 0 120 90"><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M6 14H116M14 14V86"/><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M46 26H74M60 26V84" stroke-dasharray="3 3"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M24 14H106V48C106 51 104 52 101 52H98V22H30V30H24Z"/></symbol>
+<symbol id="g-podsc" viewBox="0 0 120 90"><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M40 6V82M40 82H116"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M40 82V22C40 18 43 16 46 17C49 18 50 21 50 25V82Z"/></symbol>
+<symbol id="g-panel" viewBox="0 0 120 90"><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M4 60H116"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M6 60V46A6 6 0 0 1 18 46A6 6 0 0 1 30 46A6 6 0 0 1 42 46A6 6 0 0 1 54 46A6 6 0 0 1 66 46A6 6 0 0 1 78 46A6 6 0 0 1 90 46A6 6 0 0 1 102 46A6 6 0 0 1 114 46V60Z"/></symbol>
+<symbol id="g-lamela" viewBox="0 0 120 90"><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M4 64H116"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M8 64V34H28V41H35V34H57V41H64V34H86V41H93V34H112V64Z"/></symbol>
+<symbol id="g-deska" viewBox="0 0 120 90"><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M4 66H116"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M8 66V34H112V66Z"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M16 43H30V58H16ZM38 43H52V58H38ZM60 43H74V58H60ZM82 43H96V58H82ZM8 38H112"/></symbol>
+<symbol id="g-flex" viewBox="0 0 120 90"><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M4 76H116"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M8 62C26 22 48 22 64 44C78 62 96 64 112 34L112 42C96 72 76 70 60 50C46 32 28 32 14 64Z"/></symbol>
+<symbol id="g-skala" viewBox="0 0 120 90"><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M24 6V84"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M24 12L34 16L32 26L42 32L38 42L48 50L40 58L46 68L34 76L36 82L24 84Z"/></symbol>
+<symbol id="g-tynk" viewBox="0 0 120 90"><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M30 6V84M30 6H24M30 84H24"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M30 8C36 12 34 20 38 26C41 31 36 36 39 42C42 48 37 54 40 60C43 66 37 72 39 78C40 81 36 83 30 82Z"/></symbol>
+<symbol id="g-klej" viewBox="0 0 120 90"><path style="fill:none;stroke:var(--bsc,#9AA0A7);stroke-width:1.3" d="M4 80H116"/><path style="fill:var(--pff,none);stroke:var(--pfs,#CEA24F);stroke-width:var(--pfw,2.4);stroke-linejoin:round;stroke-linecap:round" d="M30 46H92V68H30ZM92 52H104L112 56L104 60H92M30 50H22V64H30M40 46V68"/></symbol>
+<symbol id="g-zak" viewBox="0 0 64 40"><path d="M2 38V6H8C12 6 14 9 14 13V16C14 18 12 19 12 21V38" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+</svg>
+<a class="sr" href="#app">Przejdź do treści</a>
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="#/" aria-label="Dynamic Decor - strona główna"><img src="img/logo.svg" width="150" height="34" alt="Dynamic Decor"></a>
+    <nav class="nav" aria-label="Menu główne">
+      <a href="#/katalog" data-nav="katalog">Katalog</a>
+      <a href="#/katalog?grupa=listwy" data-nav="listwy">Listwy</a>
+      <a href="#/katalog?grupa=panele" data-nav="panele">Panele i lamele</a>
+      <a href="#/produkt/f1275" data-nav="produkt" class="nopt">Karta produktu</a>
+      <a href="#/wspolpraca" data-nav="wspolpraca">Współpraca</a>
+      <a href="#/blog" data-nav="blog">Blog</a>
+    </nav>
+    <div class="tools">
+      <a class="smp" href="#/wspolpraca" aria-label="Lista próbek">Próbki<span class="cnt" data-cnt hidden>0</span></a>
+      <button class="ico burger" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mnav"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 7h20M3 13h20M3 19h13" stroke="currentColor" stroke-width="2.2" fill="none"/></svg></button>
+    </div>
+    <a class="btn" href="#/wspolpraca">Zamów próbkę <span class="cnt" data-cnt hidden>0</span></a>
+  </div>
+</header>
+<nav class="mnav" id="mnav" hidden aria-label="Menu mobilne">
+  <a href="#/" data-nav="home">Strona główna</a>
+  <a href="#/katalog" data-nav="katalog">Katalog <small>114 produktów</small></a>
+  <a href="#/katalog?grupa=listwy" data-nav="listwy">Listwy</a>
+  <a href="#/katalog?grupa=panele" data-nav="panele">Panele i lamele</a>
+  <a href="#/produkt/f1275" data-nav="produkt">Przykładowa karta produktu</a>
+  <a href="#/wspolpraca" data-nav="wspolpraca">Współpraca i próbki</a>
+  <a href="#/blog" data-nav="blog">Blog <small>16 wpisów</small></a>
+  <a class="btn" href="#/wspolpraca">Zamów próbkę</a>
+  <p>P.H. MAM Sp. z o.o., Zgórsko, ul. Leśna 31, 26-052 Nowiny<br>Zapytania produktowe: <a href="tel:+48500079199">500 079 199</a></p>
+</nav>
+
+<main id="app">
+<!-- STRONA GLOWNA -->
+<div data-view="home" class="on">
+  <section class="hero">
+    <picture>
+      <source media="(max-width:760px)" type="image/webp" srcset="img/hero-m-480.webp 480w, img/hero-m-720.webp 720w, img/hero-m-1080.webp 1080w, img/hero-m-1440.webp 1440w" sizes="100vw">
+      <img src="img/hero-d-1600.webp" srcset="img/hero-d-960.webp 960w, img/hero-d-1600.webp 1600w, img/hero-d-2400.webp 2400w" sizes="100vw" width="2400" height="1920" alt="Niebieska ściana z ramkami z listew ściennych Dynamic Decor W2040" fetchpriority="high">
+    </picture>
+    <div class="wrap">
+      <h1>Listwy, panele i lamele Dynamic Decor. Wnętrze domyka profil.</h1>
+      <p class="lead">114 produktów w 10 kategoriach. Opisz własnymi słowami, czego szukasz, a pokażemy pasujące profile z wymiarami i przekrojem.</p>
+      <form class="ask" role="search" data-ask>
+        <label class="sr" for="q1">Opisz listwę, panel lub lamelę</label>
+        <input id="q1" name="q" type="search" autocomplete="off" placeholder="np. biała listwa przypodłogowa 10 cm pod malowanie">
+        <button class="btn" type="submit">Znajdź profil</button>
+      </form>
+      <div class="chips" aria-label="Przykładowe zapytania">
+        <button class="chip" type="button" data-q="biała listwa przypodłogowa 10 cm pod malowanie">biała listwa przypodłogowa 10 cm pod malowanie</button>
+        <button class="chip" type="button" data-q="czarna listwa podłogowa">czarna listwa podłogowa</button>
+        <button class="chip" type="button" data-q="listwa karniszowa, która nie przepuszcza światła">listwa karniszowa bez prześwitu</button>
+        <button class="chip" type="button" data-q="panele ryflowane za telewizor">panele ryflowane za telewizor</button>
+        <button class="chip" type="button" data-q="lamele na elewację w kolorze drewna">lamele na elewację</button>
+      </div>
+      <p class="tel">Zapytania produktowe: <a href="tel:+48500079199">500 079 199</a></p>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-zast">
+    <div class="wrap">
+      <div class="shead"><div><h2 id="h-zast">Zacznij od miejsca, które chcesz wykończyć</h2><p>Przy podłodze, na ścianie, pod sufitem czy na elewacji. Każde wejście to przekrój profilu, jaki znajdziesz w katalogu.</p></div><a class="more" href="#/katalog">Cały katalog</a></div>
+      <div class="zast">
+        <a href="#/katalog?zast=Listwy przypodłogowe"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="#g-przyp"/></svg><b>Listwy przypodłogowe</b><span>22 profile, wysokość 40-150 mm</span></a>
+        <a href="#/katalog?zast=Listwy ścienne"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="#g-scienna"/></svg><b>Listwy ścienne</b><span>15 profili, ramki i podziały ścian</span></a>
+        <a href="#/katalog?zast=Listwy karniszowe"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="#g-karnisz"/></svg><b>Listwy karniszowe</b><span>4 profile, ukryty karnisz bez prześwitu</span></a>
+        <a href="#/katalog?zast=Panele ścienne"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="#g-panel"/></svg><b>Panele ścienne 3D</b><span>34 elementy z zakończeniami</span></a>
+        <a href="#/katalog?zast=Panele elastyczne"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="#g-flex"/></svg><b>Panele elastyczne</b><span>16 wzorów Naturflex na łuki i kolumny</span></a>
+        <a href="#/katalog?zast=Panele skalne"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="#g-skala"/></svg><b>Panele skalne</b><span>3 wzory Rock łączone bez szwu</span></a>
+        <a href="#/katalog?zast=Lamele elewacyjne"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="#g-lamela"/></svg><b>Lamele elewacyjne</b><span>16 produktów w 2 profilach, 2900 mm</span></a>
+        <a href="#/katalog?zast=Deski tarasowe"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="#g-deska"/></svg><b>Deski tarasowe</b><span>7 kolorów, 148 x 23 mm</span></a>
+        <a href="#/katalog?zast=Tynki dekoracyjne"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="#g-tynk"/></svg><b>Tynki dekoracyjne</b><span>5 efektów: beton, trawertyn, glina</span></a>
+        <a href="#/katalog?zast=Dodatki"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="#g-klej"/></svg><b>Dodatki</b><span>Klej do listew Dynamic Decor</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec g" aria-labelledby="h-pol">
+    <div class="wrap">
+      <div class="shead"><div><h2 id="h-pol">Najczęściej wybierane listwy</h2><p>Przy każdej listwie wymiary, przekrój, dokumenty i kalkulator na pełne sztuki. Przesuń, żeby zobaczyć więcej.</p></div><div class="arrows" data-for="polrow"><button type="button" aria-label="Poprzednie" data-d="-1"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><button type="button" aria-label="Następne" data-d="1"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div></div>
+      <div class="row" id="polrow" data-fill="f1275,f13100,f13100b,f18150,wf1380,w1743,c40100,f1380"></div>
+    </div>
+  </section>
+
+  <section class="band sec" aria-labelledby="h-calc">
+    <div class="wrap">
+      <div>
+        <h2 id="h-calc">Ile listew kupić? Policz na pełne sztuki</h2>
+        <p>Podajesz wymiary pokoju albo długość ściany, odejmujesz drzwi i dodajesz zapas na docinki. Wynik to liczba całych listew, bo tak się je sprzedaje.</p>
+        <a class="btn dark" href="#/produkt/f1275#calc">Kalkulator przy listwie F1275</a>
+      </div>
+      <div class="mcalc" id="mcalc">
+        <h3>Pokój z listwą F1275 (75 x 12 mm, 2,5 m)</h3>
+        <div class="room">
+          <label>Długość pokoju (m)<input type="number" inputmode="decimal" min="0" step="0.1" value="5" data-m="a"></label>
+          <label>Szerokość (m)<input type="number" inputmode="decimal" min="0" step="0.1" value="4" data-m="b"></label>
+          <label>Drzwi (szt.)<input type="number" inputmode="numeric" min="0" step="1" value="1" data-m="d"></label>
+        </div>
+        <div class="res" aria-live="polite" id="mres"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-ins">
+    <div class="wrap">
+      <div class="shead"><div><h2 id="h-ins">Panele i listwy we wnętrzach</h2><p>Wizualizacje z kart produktów. Kliknij zdjęcie, żeby je powiększyć, albo nazwę, żeby przejść do produktu.</p></div><div class="arrows" data-for="insrow"><button type="button" aria-label="Poprzednie" data-d="-1"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><button type="button" aria-label="Następne" data-d="1"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div></div>
+      <div class="row" id="insrow">
+        <div class="ins"><button type="button" data-lbg="ins" data-lb="img/p16250-g0-1400.webp" aria-label="Powiększ: panele P16250 w holu"><img src="img/p16250-g0-800.webp" width="800" height="1067" loading="lazy" alt="Panele ścienne P16250 w holu ze złotymi dodatkami"></button><p><a href="#/produkt/p16250">Panel P16250</a> - hol</p></div>
+        <div class="ins"><button type="button" data-lbg="ins" data-lb="img/p12122-g0-1400.webp" aria-label="Powiększ: panele P12122 w salonie"><img src="img/p12122-g0-800.webp" width="800" height="1067" loading="lazy" alt="Panele ścienne P12122 w salonie z niebieską sofą"></button><p><a href="#/produkt/p12122">Panel P12122</a> - salon</p></div>
+        <div class="ins"><button type="button" data-lbg="ins" data-lb="img/w1743-g0-1400.webp" aria-label="Powiększ: listwy W1743 na ścianie"><img src="img/w1743-g0-800.webp" width="800" height="640" loading="lazy" alt="Ramki z listwy ściennej W1743 na niebieskiej ścianie" style="object-position:30% 50%"></button><p><a href="#/produkt/w1743">Listwa W1743</a> - ramki na ścianie</p></div>
+        <div class="ins"><button type="button" data-lbg="ins" data-lb="img/p8120-g0-1400.webp" aria-label="Powiększ: panele P8120 w jadalni"><img src="img/p8120-g0-800.webp" width="800" height="533" loading="lazy" alt="Panele ścienne P8120 w jadalni"></button><p><a href="#/produkt/p8120">Panel P8120</a> - jadalnia</p></div>
+        <div class="ins"><button type="button" data-lbg="ins" data-lb="img/f1275-g0-1400.webp" aria-label="Powiększ: listwa F1275 w salonie"><img src="img/f1275-g0-800.webp" width="800" height="640" loading="lazy" alt="Biała listwa przypodłogowa F1275 przy jasnej podłodze"></button><p><a href="#/produkt/f1275">Listwa F1275</a> - przy podłodze</p></div>
+        <div class="ins"><button type="button" data-lbg="ins" data-lb="img/rock-dr6-4-g0-1400.webp" aria-label="Powiększ: panele skalne Rock za telewizorem"><img src="img/rock-dr6-4-g0-800.webp" width="800" height="597" loading="lazy" alt="Ściana z paneli skalnych Rock za telewizorem"></button><p><a href="#/produkt/rock-dr6-4">Panele Rock DR6</a> - ściana TV</p></div>
+        <div class="ins"><button type="button" data-lbg="ins" data-lb="img/p12122-g1-1400.webp" aria-label="Powiększ: panel P12122 z podświetleniem"><img src="img/p12122-g1-800.webp" width="800" height="800" loading="lazy" alt="Ryflowany panel P12122 z podświetleniem LED"></button><p><a href="#/produkt/p12122">Panel P12122</a> - podświetlenie</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dk" aria-labelledby="h-co">
+    <div class="wrap">
+      <div class="shead"><div><h2 id="h-co">Współpraca</h2><p>Osobna strefa dla tych, którzy z listwami i panelami pracują na co dzień.</p></div><a class="more" href="#/wspolpraca">Strefa współpracy</a></div>
+      <div class="co">
+        <div><h3>Dystrybutorzy</h3><p>Cała oferta z aktualnymi wymiarami w jednym miejscu.</p><ul><li>karty produktów z wymiarami i przekrojem</li><li>zamówienie próbek i wzorników</li><li>kontakt z działem handlowym</li></ul></div>
+        <div><h3>Architekci</h3><p>Materiały do projektów i wizualizacji.</p><ul><li>modele 3D listew do pobrania</li><li>rysunki przekrojów przy każdym profilu</li><li>próbki do konkretnego projektu</li></ul></div>
+        <div><h3>Wykonawcy</h3><p>To, co potrzebne na budowie.</p><ul><li>kalkulator na pełne listwy i panele</li><li>poradniki montażu, klejenia i cięcia</li><li>klej do listew dobrany do profili</li></ul></div>
+      </div>
+      <div class="sample"><div><h3>Zamów próbkę, zanim zdecydujesz</h3><p>Profil najlepiej ocenić w ręce i przy własnej ścianie. Próbkę dodasz z każdej karty produktu.</p></div><a class="btn" href="#/wspolpraca">Zamów próbkę</a></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-seo">
+    <div class="wrap">
+      <span class="prof" aria-hidden="true"><svg viewBox="0 0 120 34"><path d="M0 34V3H7C12 3 14 6 14 10V13C14 15 12 16 12 18V34" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>
+      <div class="seo">
+        <div>
+          <h2 id="h-seo">Listwy przypodłogowe i ścienne z polistyrenu</h2>
+          <p>Listwy Dynamic Decor są wykonane ze spienionego polistyrenu o gęstości około 0,45 g/cm³. Materiał jest twardy, odporny na wilgoć i zadrapania, a przy tym lekki, więc listwę montuje się na klej, bez kołków i specjalnych narzędzi.</p>
+          <h3>Biała listwa gotowa do montażu albo do malowania</h3>
+          <p>Większość profili ma matowe, zagruntowane wykończenie w czystej bieli. Można je zostawić białe albo pomalować farbą na bazie wody na dowolny kolor, także w kolorze ściany. Część listew jest dostępna w czerni.</p>
+        </div>
+        <div>
+          <h3 style="margin-top:0">Panele ścienne 3D, lamele i deski tarasowe</h3>
+          <p>Panele ryflowane i faliste o długości 2700 mm mają osobne zakończenia lewe i prawe, dzięki czemu brzeg ściany jest domknięty. Do wnętrz są też elastyczne panele Naturflex na łuki i kolumny oraz panele skalne Rock, a na zewnątrz lamele elewacyjne i deski tarasowe o długości 2900 mm.</p>
+          <h3>Jak dobrać wysokość listwy przypodłogowej</h3>
+          <p>Niska listwa 60-80 mm pasuje do mniejszych pomieszczeń i nowoczesnych wnętrz, wyższa 100-150 mm do wysokich ścian i klasycznych aranżacji. Wszystkie wymiary są przy każdej karcie produktu, razem z dokumentami do pobrania.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec g" aria-labelledby="h-bl">
+    <div class="wrap">
+      <div class="shead"><div><h2 id="h-bl">Blog i poradniki</h2><p>Montaż, klejenie, malowanie i pomysły na ściany. 16 wpisów, każdy w swojej kategorii.</p></div><a class="more" href="#/blog">Wszystkie wpisy</a></div>
+      <div class="bl" id="blhome"></div>
+    </div>
+  </section>
+</div>
+
+<!-- KATALOG -->
+<div data-view="katalog">
+  <div class="wrap">
+    <nav class="crumb" aria-label="Okruszki"><a href="#/">Strona główna</a><span>/</span><b id="kcrumb">Katalog</b></nav>
+    <div class="pagehead"><h1 id="kh1">Listwy, panele i lamele</h1><p>W makiecie 20 przykładowych produktów z 114, ze wszystkich 10 kategorii. Filtry działają na prawdziwych wymiarach z dynamicdecor.pl.</p></div>
+    <div class="kat">
+      <aside class="fpanel" id="fpanel" aria-label="Filtry">
+        <div class="fhead"><b>Filtry</b><button class="ico" type="button" data-fclose aria-label="Zamknij filtry"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 5l12 12M17 5 5 17" stroke="currentColor" stroke-width="2"/></svg></button></div>
+        <div id="filters"></div>
+        <div class="fapply"><button class="btn" type="button" data-fclose>Pokaż wyniki</button></div>
+      </aside>
+      <div>
+        <form class="kask" role="search" data-ask2>
+          <label class="sr" for="q2">Opisz, czego szukasz</label>
+          <input id="q2" type="search" autocomplete="off" placeholder="Opisz własnymi słowami, np. czarna listwa 10 cm">
+          <button class="btn" type="submit">Szukaj</button>
+        </form>
+        <div class="understood" id="understood" hidden></div>
+        <div class="ktop"><b id="count"></b><div><button class="btn line sm fbtn" type="button" data-fopen>Filtry</button><label class="sr" for="sort">Sortuj</label><select id="sort"><option value="dop">Najlepiej dopasowane</option><option value="kat">Kategoria</option><option value="wa">Od najwęższych</option><option value="wd">Od najszerszych</option></select></div></div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUKT -->
+<div data-view="produkt"><div class="wrap" id="pview"></div></div>
+
+<!-- WSPOLPRACA -->
+<div data-view="wspolpraca">
+  <div class="wrap">
+    <nav class="crumb" aria-label="Okruszki"><a href="#/">Strona główna</a><span>/</span>Współpraca</nav>
+    <div class="pagehead"><h1>Współpraca i próbki</h1><p>Dla dystrybutorów, architektów i wykonawców. Tu też zamówisz próbki profili dodanych z kart produktów.</p></div>
+    <div class="wsp">
+      <div class="aud">
+        <div><h2>Dystrybutorzy</h2><p>Aktualna oferta 114 produktów z wymiarami, przekrojami i zdjęciami do wykorzystania w sklepie. Dział handlowy odpowiada na pytania o dostępność i warunki współpracy.</p><ul><li>zestawienie oferty i karty produktów</li><li>wzorniki i próbki profili</li><li>materiały do ekspozycji w salonie</li></ul></div>
+        <div><h2>Architekci i projektanci</h2><p>Modele 3D listew do programów CAD i wizualizacji, rysunki przekrojów przy każdym profilu oraz próbki do konkretnego projektu.</p><ul><li><a href="https://dynamicdecor.pl/wp-content/uploads/2025/02/Dynamic-Decor-Listwy-.zip" rel="noopener">Modele 3D listew (ZIP, 1,9 MB)</a></li><li><a href="https://dynamicdecor.pl/wp-content/uploads/2024/04/Dynamic-Decor-Karta-technicza.pdf" target="_blank" rel="noopener">Karta techniczna listew (PDF)</a></li><li>certyfikaty: do uzupełnienia w CMS</li></ul></div>
+        <div><h2>Wykonawcy</h2><p>Kalkulator na pełne sztuki przy każdym produkcie, poradniki montażu i klej dobrany do listew z polistyrenu.</p><ul><li><a href="#/blog/czym-przyklejac-listwy-przypodlogowe">Czym przyklejać listwy przypodłogowe</a></li><li><a href="#/blog/czym-ciac-listwy-przypodlogowe-z-polistyrenu">Czym ciąć listwy z polistyrenu</a></li><li><a href="#/produkt/klej-do-listew">Klej do listew Dynamic Decor</a></li></ul></div>
+        <div><h2>Gdzie kupić</h2><p>Listwy Dynamic Decor kupisz u dystrybutorów. Lista punktów sprzedaży z mapą: do uzupełnienia w CMS. Dystrybucja: P.H. MAM Sp. z o.o., tel. <a href="tel:+48413465305">41 346 53 05</a>, <a href="mailto:biuro@mam.com.pl">biuro@mam.com.pl</a>.</p></div>
+      </div>
+      <form class="form" data-sform>
+        <h2>Zamów próbkę lub zapytaj o współpracę</h2>
+        <label>Kim jesteś<select><option>Klient indywidualny</option><option>Dystrybutor</option><option>Architekt lub projektant</option><option>Wykonawca</option></select></label>
+        <div><span style="font-size:14px;font-weight:600">Profile do próbki</span><div class="slist" id="slist" style="margin-top:6px"></div></div>
+        <label>Inne profile lub uwagi<input id="samplefld" autocomplete="off" placeholder="np. F13100, P12122 z zakończeniami"></label>
+        <label>Imię i nazwisko lub firma<input autocomplete="off"></label>
+        <label>E-mail lub telefon<input autocomplete="off"></label>
+        <label>Adres dostawy próbki<textarea rows="2"></textarea></label>
+        <button class="btn" type="submit">Wyślij zamówienie próbki</button>
+        <p class="ok note" hidden>To podgląd: formularz nic nie wysyła. Docelowo zgłoszenie trafia mailem do działu handlowego, a klient dostaje potwierdzenie z listą zamówionych profili.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG -->
+<div data-view="blog"><div class="wrap" id="bview"></div></div>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="logo" href="#/"><img src="img/logo.svg" width="170" height="39" alt="Dynamic Decor" loading="lazy"></a><p class="addr">Dystrybucja: P.H. MAM Sp. z o.o.<br>Zgórsko, ul. Leśna 31, 26-052 Nowiny<br><a href="tel:+48413465305">41 346 53 05</a> · zapytania produktowe <a href="tel:+48500079199">500 079 199</a><br><a href="mailto:biuro@mam.com.pl">biuro@mam.com.pl</a></p></div>
+      <div><h4>Listwy</h4><ul><li><a href="#/katalog?zast=Listwy przypodłogowe">Przypodłogowe</a></li><li><a href="#/katalog?zast=Listwy ścienne">Ścienne</a></li><li><a href="#/katalog?zast=Listwy karniszowe">Karniszowe</a></li><li><a href="#/produkt/klej-do-listew">Klej do listew</a></li></ul></div>
+      <div><h4>Panele i lamele</h4><ul><li><a href="#/katalog?zast=Panele ścienne">Panele ścienne 3D</a></li><li><a href="#/katalog?zast=Panele elastyczne">Panele elastyczne</a></li><li><a href="#/katalog?zast=Lamele elewacyjne">Lamele elewacyjne</a></li><li><a href="#/katalog?zast=Deski tarasowe">Deski tarasowe</a></li></ul></div>
+      <div><h4>Firma</h4><ul><li><a href="#/wspolpraca">Współpraca i próbki</a></li><li><a href="#/blog">Blog</a></li><li><a href="#/wspolpraca">Do pobrania</a></li><li><a href="#/">Polityka prywatności</a></li></ul></div>
+    </div>
+    <div class="bot"><span>© <span data-year>2026</span> Dynamic Decor · P.H. MAM Sp. z o.o. · Propozycja nowej strony dynamicdecor.pl</span><a class="wylinka-badge" href="https://wylinka.pl/?utm_source=dynamicdecor.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
+</div>
+  </div>
+</footer>
+
+<button class="adv" type="button" aria-label="Zapytaj doradcę" aria-controls="advp" aria-expanded="false"><svg viewBox="0 0 30 24" aria-hidden="true"><path d="M2 22V3H8C12 3 14 6 14 10V12C14 14 12 15 12 17V22" fill="none" stroke="#CEA24F" stroke-width="2.4" stroke-linejoin="round"/><path d="M18 8H28M18 13H28M18 18H24" stroke="#fff" stroke-width="2"/></svg><span>Doradca</span></button>
+<section class="advp" id="advp" hidden aria-label="Doradca Dynamic Decor">
+  <header><div><b>Doradca Dynamic Decor</b><small>Dobierze profil, policzy sztuki, podpowie montaż</small></div><button class="ico" type="button" data-advclose aria-label="Zamknij doradcę"><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 5l12 12M17 5 5 17" stroke="currentColor" stroke-width="2"/></svg></button></header>
+  <div class="msgs" id="msgs"><div class="msg ai">Dzień dobry. Napisz, co chcesz wykończyć, np. "pokój 4 x 5 m, biała listwa 10 cm pod malowanie" albo zapytaj o montaż.</div></div>
+  <div class="advq" id="advq2"><button type="button" data-aq="pokój 4 x 5 m, biała listwa przypodłogowa 10 cm pod malowanie">pokój 4 x 5 m, listwa 10 cm</button><button type="button" data-aq="czym przykleić listwy do krzywej ściany?">klejenie do krzywej ściany</button><button type="button" data-aq="czym malować listwy?">czym malować</button><button type="button" data-aq="panele na ścianę za telewizor">ściana za TV</button></div>
+  <form data-advform><label class="sr" for="advq">Pytanie do doradcy</label><input id="advq" autocomplete="off" placeholder="Napisz pytanie"><button class="btn" type="submit">Wyślij</button></form>
+</section>
+<div class="scrim" hidden></div>
+<div class="lb" hidden role="dialog" aria-label="Powiększone zdjęcie"><img alt=""><button type="button" class="nv p" aria-label="Poprzednie">‹</button><button type="button" class="nv n" aria-label="Następne">›</button><p class="lc"></p><button type="button" class="x" aria-label="Zamknij">×</button></div>
+<script src="products.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
