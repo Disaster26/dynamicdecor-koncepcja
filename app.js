@@ -277,7 +277,7 @@ function bindCalc(p){
   if(c==='listwa'){
    var o=listwaCalc(p,v,mode);
    if(!o.len){r.innerHTML='<p>Podaj wymiary.</p>';return}
-   r.innerHTML='<b class="big">'+o.n+' '+plural(o.n,'listwa','listwy','listew')+' '+p.kod+'</b><p>'+o.steps.join(', ')+' = '+fmt(o.len)+' m, z zapasem '+v.z+'% = '+fmt(o.need)+' m. Sprzedaż na pełne listwy po '+fmt(o.L,1)+' m, razem '+fmt(o.buy)+' m.</p>'+bar(o.len,o.need-o.len,o.buy)+'<p>Czarny pasek to długość ścian, złoty to zapas na docinki i narożniki. Do montażu: <a href="#/produkt/klej-do-listew">klej do listew Dynamic Decor</a>.</p>';
+   r.innerHTML='<b class="big">'+o.n+' '+plural(o.n,'listwa','listwy','listew')+' '+p.kod+'</b><p>'+o.steps.join(', ')+(o.steps.length>1?' = '+fmt(o.len)+' m':'')+', z zapasem '+v.z+'% = '+fmt(o.need)+' m. Sprzedaż na pełne listwy po '+fmt(o.L,1)+' m, razem '+fmt(o.buy)+' m.</p>'+bar(o.len,o.need-o.len,o.buy)+'<p>Czarny pasek to długość ścian, złoty to zapas na docinki i narożniki. Do montażu: <a href="#/produkt/klej-do-listew">klej do listew Dynamic Decor</a>.</p>';
    return;
   }
   var area=v.a*v.b,z=v.z/100,n,txt;
@@ -296,7 +296,7 @@ function bindCalc(p){
 function miniCalc(){
  var box=$('#mcalc');if(!box)return;var p=bySlug('f1275');
  function run(){var v={a:0,b:0,d:0};$$('[data-m]',box).forEach(function(i){v[i.dataset.m]=num(i.value)||0});var o=listwaCalc(p,{a:v.a,b:v.b,d:v.d,dw:0.9,z:10},'room');
-  $('#mres').innerHTML=o.len?'<b class="big">'+o.n+' '+plural(o.n,'listwa','listwy','listew')+'</b><p>'+o.steps.join(', ')+' = '+fmt(o.len)+' m, z zapasem 10% = '+fmt(o.need)+' m. Kupujesz '+o.n+' x 2,5 m = '+fmt(o.buy)+' m.</p>'+bar(o.len,o.need-o.len,o.buy):'<p>Podaj wymiary pokoju.</p>'}
+  $('#mres').innerHTML=o.len?'<b class="big">'+o.n+' '+plural(o.n,'listwa','listwy','listew')+'</b><p>'+o.steps.join(', ')+(o.steps.length>1?' = '+fmt(o.len)+' m':'')+', z zapasem 10% = '+fmt(o.need)+' m. Kupujesz '+o.n+' x 2,5 m = '+fmt(o.buy)+' m.</p>'+bar(o.len,o.need-o.len,o.buy):'<p>Podaj wymiary pokoju.</p>'}
  box.addEventListener('input',run);run();
 }
 
